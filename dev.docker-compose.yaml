@@ -1,5 +1,5 @@
 services:
-  attendee-worker-local:
+  attendee-worker:
     build: ./
     volumes:
       - .:/attendee
@@ -16,7 +16,7 @@ services:
         "/opt/bin/entrypoint.sh && celery -A attendee worker -l INFO",
       ]
 
-  attendee-scheduler-local:
+  attendee-scheduler:
     build: ./
     volumes:
       - .:/attendee
@@ -33,7 +33,7 @@ services:
         "/opt/bin/entrypoint.sh && python manage.py run_scheduler",
       ]
 
-  attendee-app-local:
+  attendee-app:
     build: ./
     volumes:
       - .:/attendee
