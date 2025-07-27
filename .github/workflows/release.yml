@@ -63,19 +63,6 @@ jobs:
           echo "NEW_VERSION=$new_version" >> $GITHUB_ENV
           echo "New version will be: v$new_version"
 
-      - name: Update version file
-        run: |
-          mkdir -p app
-          echo "__version__ = \"${{ env.NEW_VERSION }}\"" > app/version.py
-
-      - name: Commit version update
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add app/version.py
-          git commit -m "chore: bump version to v${{ env.NEW_VERSION }}" || echo "No changes to commit"
-          git push || echo "No changes to push"
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
