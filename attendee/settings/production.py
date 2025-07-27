@@ -12,7 +12,7 @@ DATABASES = {
         env="DATABASE_URL",
         conn_max_age=600,
         conn_health_checks=True,
-        ssl_require=False,
+        ssl_require=True,
     ),
 }
 
@@ -48,5 +48,5 @@ if os.getenv("ERROR_REPORTS_RECEIVER_EMAIL_ADDRESS"):
 
 SERVER_EMAIL = os.getenv("SERVER_EMAIL")
 # TODO: Add the correct domains here once domain finalized
-CSRF_TRUSTED_ORIGINS = ["https://*.yukti.dev"]
-CORS_ALLOWED_ORIGINS = ["https://yukti.dev", "https://aime.yukti.dev", "https://*.yukti.dev"]
+CSRF_TRUSTED_ORIGINS = ["https://*.yukti.dev", "https://attendee.yukti.dev"]
+CORS_ALLOWED_ORIGINS = ["https://yukti.dev", "https://attendee.yukti.dev", "https://*.yukti.dev"]
