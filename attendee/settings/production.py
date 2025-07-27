@@ -13,7 +13,6 @@ DATABASES = {
         conn_max_age=600,
         conn_health_checks=True,
         ssl_require=False,
-        ssl_mode="disable",
     ),
 }
 
