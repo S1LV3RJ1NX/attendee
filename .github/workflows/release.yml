@@ -90,7 +90,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          platforms: linux/amd64, linux/arm64
+          platforms: linux/amd64
           tags: |
             ghcr.io/${{ env.OWNER_LOWER }}/attendee:v${{ env.NEW_VERSION }}${{ github.event.inputs.client_name != '' && format('-{0}', github.event.inputs.client_name) || '' }}
             ${{ github.event.inputs.client_name == '' && 'ghcr.io/s1lv3rj1nx/attendee:latest' || '' }}
