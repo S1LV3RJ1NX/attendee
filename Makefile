@@ -20,7 +20,7 @@ logs: ## View the logs
 
 .PHONY: migrate
 migrate: ## Run migrations
-	docker compose -f dev.docker-compose.yaml exec attendee-app-local python manage.py migrate
+	docker compose -f dev.docker-compose.yaml exec attendee-app python manage.py migrate
 
 .PHONY: lint
 lint: ## Run the ruff linter.
